@@ -1,17 +1,18 @@
 @extends('layouts.main')
-@section('title', 'Criar Orcamento')
+@section('title', 'Editar Orcamento')
 
 @section('content')
 
 <div id="event-create-container" class="col-md-6 offset-md-3">
-  <h1>Criar Orcamento</h1>
-  <form action="/orcamentos" method="POST" enctype="multipart/form-data">
+  <h1>Editar Orcamento</h1>
+  <form action="/orcamentos/update/{{ $orcamento->id }}" method="POST" enctype="multipart/form-data">
     @csrf               {{--DIRETIVA SALVAR DADOS NO BANCO--}}
+    @method('PUT')
 
 
     <div class="form-group">
       <label for="cliente_id" class="form-label"> Cliente: </label>
-      <select  name="cliente_id" id="cliente_id"  class="form-control" placeholder="produto_id">  
+      <select  name="cliente_id" id="cliente_id"  class="form-control" value="{{ $orcamento->cliente_id }}">  
         @foreach ($clientes as $cliente)
         <option value="{{$cliente->id}}">{{$cliente->nome_cliente}}</option>
         @endforeach
@@ -19,7 +20,7 @@
     </div>
     <div class="form-group">
       <label for="fornecedor_id" class="form-label"> Fornecedor: </label>
-      <select  name="fornecedor_id" id="fornecedor_id"  class="form-control" placeholder="fornecedor_id">  
+      <select  name="fornecedor_id" id="fornecedor_id"  class="form-control" value="{{ $orcamento->fornecedor_id }}">  
         @foreach ($fornecedores as $fornecedor)
         <option value="{{$fornecedor->id}}">{{$fornecedor->nome_fornecedor}}</option>
         @endforeach
@@ -27,7 +28,7 @@
     </div>
     <div class="form-group">
       <label for="produto_id" class="form-label"> Produto: </label>
-      <select  name="produto_id" id="produto_id"  class="form-control" placeholder="produto_id">  
+      <select  name="produto_id" id="produto_id"  class="form-control" value="{{ $orcamento->produto_id }}">  
         @foreach ($produtos as $produto)
         <option value="{{$produto->id}}">{{$produto->nome_produto}}</option>
         @endforeach
@@ -35,7 +36,7 @@
     </div>
     <div class="form-group">
       <label for="quantidade_orcamento">Quantidade Orcamento:</label>
-      <input type="number" class="form-control" id="quantidade_orcamento" name="quantidade_orcamento" placeholder="Quantidade" required>
+      <input type="number" class="form-control" id="quantidade_orcamento" name="quantidade_orcamento" value="{{ $orcamento->quantidade_orcamento }}" required>
     </div>
     <div class="form-group">
       <label for="status">Status:</label>

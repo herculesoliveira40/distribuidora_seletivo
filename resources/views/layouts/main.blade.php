@@ -5,12 +5,14 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <link rel="icon" href="/img/deadpool-logo.png" sizes="42x42" type="image/png">
+    <link rel="icon" href="/img/cbf.png" sizes="42x42" type="image/png">
     <title>@yield('title')</title>
                     <!-- CSS e JS Interno -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script> 
-    <script type="text/javascript" src="/js/bootstrap.min.js"></script>
+    
+    <script type="text/javascript" src="/js/cnpj_receitaws.js"></script>
+ 
                     <!-- Boostrap CDN -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
                     <!-- Icones Bootstrap -->
@@ -18,6 +20,7 @@
                     <!-- Jquery -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.0/jquery.mask.js"></script>
+
 </head>
 
 <body class="antialiased">
@@ -25,27 +28,27 @@
 <nav class="navbar navbar-light bg-dark justify-content-between">
               
     <a class="nav-link" href="/">
-    <img src="/img/deadpool-logo.png" alt="" height="60px" width="120px" class="d-inline-block align-text-top">
+    <img src="/img/cbf.png" alt="" height="60px" width="120px" class="d-inline-block align-text-top">
         Home
     </a>
     
         
-        <a class="nav-link" aria-current="page" href="/contato">Contato</a>
-        <a class="nav-link" aria-current="page" href="/sobre">Sobre</a>
-        <a class="nav-link" aria-current="page" href="/produtos/create">Produtos</a>
+
+        <a class="nav-link" aria-current="page" href="/produtos/dashboard">Produtos</a>
         @auth
               <li class="nav-item">
-                <a class="nav-link btn btn-outline-danger" aria-current="page" href="/categorias/painel">Painel Categorias</a>
+                <a class="nav-link btn btn-outline-danger" aria-current="page" href="/clientes/dashboard">Painel Clientes</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link btn btn-outline-danger" aria-current="page" href="/produtos/painel">Painel Produtos</a>
+                <a class="nav-link btn btn-outline-danger" aria-current="page" href="/fornecedores/dashboard">Painel Fornecedor</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link btn btn-outline-danger" aria-current="page" href="/estoques/painel">Painel Estoques</a>
+                <a class="nav-link btn btn-outline-danger" aria-current="page" href="/produtos/dashboard">Painel Produtos</a>
               </li>
               <li class="nav-item">
-                <a href="/dashboard" class="nav-link btn btn-outline-danger">Meu Cadastro</a>
+                <a class="nav-link btn btn-outline-danger" aria-current="page" href="/orcamentos/dashboard">Painel Orcamento</a>
               </li>
+
               <li class="nav-item">
                   <!-- Button trigger modal -->
                   <button type="button" class="nav-link btn btn-outline-danger" data-bs-toggle="modal" data-bs-target="#exampleModal">
@@ -122,9 +125,10 @@
     </div>
 </main>
 <footer class="text-center bg-danger text-light">
-    <p> "Como sabemos se queremos alguma coisa ou se foi nossa criação programou para querer..." </p>
+    
         <p>  2022 <a href="https://github.com/herculesoliveira40" target="_blank"> Shelby  &copy;</a> </strong> </p>
 </footer>
 </body>
-
+<script type="text/javascript" src="/js/script_modal.js"></script>
+<script type="text/javascript" src="/js/viacep.js"></script>
 </html>

@@ -12,11 +12,10 @@ class ProdutoController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
-    {
-        $produtos = Produto::All();
+    public function dashboard() {
+        $produtos = Produto::all();
 
-        return view('produtos.index', ['produtos' => $produtos]);
+    return View('produtos.dashboard', compact('produtos')); 
     }
 
 
@@ -82,12 +81,12 @@ class ProdutoController extends Controller
         Produto::findOrFail($request->id)->update($data);
         
         if($request->quantidade < 100){
-            return redirect('/produtos')->with('alerta', 'Produto editado, estoque baixo verificar!', ['data' => $data]);
+            return redirect('/produtos/dashboard')->with('alerta', 'Produto editado, estoque baixo verificar!', ['data' => $data]);
 
         }
 
         else{
-            return redirect('/produtos')->with('mensagem', 'Produto editado com Sucesso!', ['data' => $data]);
+            return redirect('/produtos/dashboard')->with('mensagem', 'Produto editado com Sucesso!', ['data' => $data]);
 
         }
     }
@@ -98,10 +97,10 @@ class ProdutoController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id) {
-
+    public function destroy(Request $request, $id) {
+        $id = $request['index_id'];
         Produto::findOrFail($id)->delete();
 
-    return redirect('/produtos')->with('mensagem', 'Produto deletado com Sucesso!'); //Invocar mensagemmmmmmmmmmmmmm
+    return redirect('/produtos/dashboard')->with('mensagem', 'Produto deletado com Sucesso!'); //Invocar mensagemmmmmmmmmmmmmm
     }
 }

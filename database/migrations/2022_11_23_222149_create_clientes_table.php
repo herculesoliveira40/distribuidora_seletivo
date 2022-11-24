@@ -17,7 +17,8 @@ return new class extends Migration
             $table->id();
            
             $table->string('nome_cliente');
-            $table->string('cnpj');
+            $table->string('cpf');
+            $table->string('cnpj'); //->nullable() ->default(0);
             $table->string('razao_social');
             $table->string('atividade_principal');
             $table->string('cep');

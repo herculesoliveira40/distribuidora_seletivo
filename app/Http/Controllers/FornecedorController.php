@@ -17,6 +17,11 @@ class FornecedorController extends Controller
         //
     }
 
+    public function dashboard() {
+        $fornecedores = Fornecedor::all();
+
+    return View('fornecedores.dashboard', compact('fornecedores')); 
+    }
     /**
      * Store a newly created resource in storage.
      *
@@ -44,7 +49,7 @@ class FornecedorController extends Controller
         $fornecedor->save();
 
 
-    return redirect('/')->with('mensagem', 'Fornecedor criado com Sucesso!'); //Invocar mensagemmmmmmmmmmmmmm
+    return redirect('/fornecedores/dashboard')->with('mensagem', 'Fornecedor criado com Sucesso!'); //Invocar mensagemmmmmmmmmmmmmm
     }
 
     /**
@@ -65,19 +70,33 @@ class FornecedorController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
-    {
-        //
+    public function update(Request $request) {
+
+        $data = $request->all(); 
+        
+
+        Fornecedor::findOrFail($request->id)->update($data);
+    return redirect('/fornecedores/dashboard')->with('mensagem', 'Fornecedor editado com Sucesso!', ['data' => $data]);
     }
 
+    public function edit($id) {
+        $fornecedor = Fornecedor::findOrFail($id);
+       
+
+    return view('fornecedores.edit', ['fornecedor' => $fornecedor]); 
+    }
     /**
      * Remove the specified resource from storage.
      *
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
-    {
-        //
+    public function destroy(Request $request, $id) {
+       
+        $id = $request['index_id'];
+       // dd('teste',$id);
+       Fornecedor::findOrFail($id)->delete();
+       
+    return redirect('/fornecedores/dashboard')->with('mensagem', 'Cliente deletado com Sucesso!'); //Invocar mensagemmmmmmmmmmmmmm
     }
 }

@@ -9,6 +9,8 @@ class Cliente extends Model
 {
     use HasFactory;
 
+    protected $guarded = [];
+    
     public function orcamento() {
         return $this->hasMany('App\Models\Orcamento');
     }

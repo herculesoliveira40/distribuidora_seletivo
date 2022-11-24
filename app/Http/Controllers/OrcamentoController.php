@@ -18,11 +18,11 @@ class OrcamentoController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function dashboard()
     {
         $orcamentos = Orcamento::All();
 
-        return view('orcamentos.orcamentos', ['orcamentos' => $orcamentos]);
+        return view('orcamentos.dashboard', compact('orcamentos'));
     }
 
     /**
@@ -59,7 +59,7 @@ class OrcamentoController extends Controller
         $orcamento->save();
 
 
-    return redirect('/orcamentos')->with('mensagem', 'Orcamento criado com Sucesso!', compact('clientes', 'fornecedores','produtos')); //Invocar mensagemmmmmmmmmmmmmm
+    return redirect('/orcamentos/dashboard')->with('mensagem', 'Orcamento criado com Sucesso!', compact('clientes', 'fornecedores','produtos')); //Invocar mensagemmmmmmmmmmmmmm
     }
 
     /**
@@ -80,9 +80,22 @@ class OrcamentoController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
-    {
-        //
+    public function update(Request $request) {
+
+        $data = $request->all(); 
+        
+
+        Orcamento::findOrFail($request->id)->update($data);
+    return redirect('/orcamentos/dashboard')->with('mensagem', 'Orcamento editado com Sucesso!', ['data' => $data]);
+    }
+
+    public function edit($id) {
+        $orcamento = Orcamento::findOrFail($id);
+        $clientes = Cliente::all();
+        $fornecedores = Fornecedor::all();
+        $produtos = Produto::all();
+
+    return view('orcamentos.edit', ['orcamento' => $orcamento], compact('clientes', 'fornecedores','produtos')); 
     }
 
     /**
@@ -91,8 +104,12 @@ class OrcamentoController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
-    {
-        //
+    public function destroy(Request $request, $id) {
+       
+        $id = $request['index_id'];
+       // dd('teste',$id);
+       Orcamento::findOrFail($id)->delete();
+       
+    return redirect('/orcamentos/dashboard')->with('mensagem', 'Orcamento deletado com Sucesso!'); //Invocar mensagemmmmmmmmmmmmmm
     }
 }

@@ -9,4 +9,6 @@ class Orcamento extends Model
 {
     use HasFactory;
 
+    protected $guarded = [];
+    
 }

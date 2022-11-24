@@ -11,6 +11,8 @@ class Fornecedor extends Model
 
     protected $table = "fornecedores"; //mds
 
+    protected $guarded = [];
+    
     public function orcamento() {
         return $this->hasMany('App\Models\Orcamento');
     }

@@ -4,7 +4,7 @@
 @section('content')
 
 
-<h1>Forncecedor {{$nome_cliente}}</h1> 
+<h1>Forncecedor {{$nome_fornecedor}}</h1> 
 
 
 
