@@ -59,7 +59,7 @@ class OrcamentoController extends Controller
         $orcamento->save();
 
 
-    return redirect('/', compact('clientes', 'fornecedores','produtos'))->with('mensagem', 'Orcamento criado com Sucesso!'); //Invocar mensagemmmmmmmmmmmmmm
+    return redirect('/orcamentos')->with('mensagem', 'Orcamento criado com Sucesso!', compact('clientes', 'fornecedores','produtos')); //Invocar mensagemmmmmmmmmmmmmm
     }
 
     /**
