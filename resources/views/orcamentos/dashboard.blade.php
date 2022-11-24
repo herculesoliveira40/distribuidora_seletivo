@@ -5,6 +5,8 @@
 @section('content')
 <div class="row">
 <div class="col-xs-6 col-sm-8 col-lg-10"> 
+<a href="/orcamentos/create" class="btn btn-success"><i class="bi bi-plus-square-dotted"></i> Cadastrar Orcamento</a> 
+  
     <table class="table">
         <thead>
             <tr>
