@@ -14,4 +14,8 @@ class Produto extends Model
     protected $dates = ['data_fabricacao', 'data_vencimento'];
 
     protected $guarded = [];
+
+    public function orcamento() {
+        return $this->hasMany('App\Models\Orcamento');
+    }
 }

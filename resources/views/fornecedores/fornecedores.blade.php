@@ -1,12 +1,12 @@
 @extends('layouts.main')
-@section('title', 'Cliente')
+@section('title', 'Fornecedor')
 
 @section('content')
 
 
-<h1>Cliente {{$nome_cliente}}</h1> 
+<h1>Forncecedor {{$nome_cliente}}</h1> 
 
 
 
-
+ 
 @endsection
