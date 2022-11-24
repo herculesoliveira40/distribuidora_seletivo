@@ -1,6 +1,6 @@
 @extends('layouts.main')
 
-@section('title', 'Relatorio Usuario')
+@section('title', 'Painel Usuario')
 
 @section('content')
 <div class="row">

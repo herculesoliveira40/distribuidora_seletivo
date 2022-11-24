@@ -1,6 +1,6 @@
 @extends('layouts.main')
 
-@section('title', 'Relatorio Orcamento')
+@section('title', 'Painel Orcamento')
 
 @section('content')
 <div class="row">

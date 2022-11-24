@@ -40,8 +40,8 @@
     <div class="form-group">
       <label for="status">Status:</label>
       <select name="status" id="status" class="form-control">     
-        <option value="1">Pendente</option>
-        <option value="0">Em Andamento</option>
+        <option value="0">Pendente</option>
+        <option value="1">Em Andamento</option>
         <option value="2">Autorizado</option>
         <option value="3">Concluído</option>
         <option value="4">Entregue</option>
