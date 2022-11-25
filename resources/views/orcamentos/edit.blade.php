@@ -41,11 +41,11 @@
     <div class="form-group">
       <label for="status">Status:</label>
       <select name="status" id="status" class="form-control">     
-        <option value="0">Pendente</option>
-        <option value="1">Em Andamento</option>
-        <option value="2">Autorizado</option>
-        <option value="3">Concluído</option>
-        <option value="4">Entregue</option>
+        <option value="0"{{ $orcamento->status == 0 ? "selected='selected'" : ""}}>Pendente</option>
+        <option value="1"{{ $orcamento->status == 1 ? "selected='selected'" : ""}}>Em Andamento</option>
+        <option value="2"{{ $orcamento->status == 2 ? "selected='selected'" : ""}}>Autorizado</option>
+        <option value="3"{{ $orcamento->status == 3 ? "selected='selected'" : ""}}>Entregue</option>
+        <option value="4"{{ $orcamento->status == 4 ? "selected='selected'" : ""}}>Concluído</option>
       </select>
     </div>
     <input type="submit" class="btn btn-primary" value="Editar Orcamento">

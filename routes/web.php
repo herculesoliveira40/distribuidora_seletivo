@@ -19,7 +19,9 @@ use App\Http\Controllers\OrcamentoController;
 |
 */
 
-Route::get('/', [OrcamentoController::class, 'dashboard'])->middleware('auth');
+Route::get('/', function () {
+    return view('welcome');
+});
     //Rotas Produto
 Route::get('/produtos', [ProdutoController::class, 'index'])->middleware('auth');
 Route::get('/produtos/dashboard', [ProdutoController::class, 'dashboard'])->middleware('auth');

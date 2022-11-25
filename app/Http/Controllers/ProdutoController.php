@@ -43,7 +43,7 @@ class ProdutoController extends Controller
         $produto->save();
 
 
-    return redirect('/')->with('mensagem', 'Produto criado com Sucesso!'); //Invocar mensagemmmmmmmmmmmmmm
+    return redirect('/produtos/dashboard')->with('mensagem', 'Produto criado com Sucesso!'); //Invocar mensagemmmmmmmmmmmmmm
     }
 
     /**

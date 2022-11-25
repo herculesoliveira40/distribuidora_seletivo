@@ -43,8 +43,8 @@
         <option value="0">Pendente</option>
         <option value="1">Em Andamento</option>
         <option value="2">Autorizado</option>
-        <option value="3">Concluído</option>
-        <option value="4">Entregue</option>
+        <option value="3">Entregue</option>
+        <option value="4">Concluído</option>
       </select>
     </div>
     <input type="submit" class="btn btn-primary" value="Criar Orcamento">
