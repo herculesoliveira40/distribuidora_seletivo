@@ -1,7 +1,11 @@
+@extends('layouts.main')
+@section('title', 'DashBoard')
+
+@section('content')
 <x-guest-layout>
     <x-jet-authentication-card>
         <x-slot name="logo">
-            <x-jet-authentication-card-logo />
+        <img src="/img/logo_elaadmin.png" alt="" width="120" height="96">
         </x-slot>
 
         <x-jet-validation-errors class="mb-4" />
@@ -37,12 +41,24 @@
                     <a class="underline text-sm text-gray-600 hover:text-gray-900" href="{{ route('password.request') }}">
                         {{ __('Forgot your password?') }}
                     </a>
+                    
                 @endif
 
                 <x-jet-button class="ml-4">
-                    {{ __('Log in') }}
+                <a class="underline text-sm text-green-600 hover:text-green-900" href="{{ route('register') }}">
+                    {{ __('Sign in') }}
+                </a>        
                 </x-jet-button>
+
+                <x-jet-button class="ml-4">
+                    {{ __('Login') }}
+                </x-jet-button>
+
             </div>
         </form>
+          
     </x-jet-authentication-card>
+    
 </x-guest-layout>
+
+@endsection
