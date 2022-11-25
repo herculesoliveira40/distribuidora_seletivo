@@ -12,25 +12,25 @@
 
     <div class="form-group">
       <label for="cliente_id" class="form-label"> Cliente: </label>
-      <select  name="cliente_id" id="cliente_id"  class="form-control" value="{{ $orcamento->cliente_id }}">  
+      <select  name="cliente_id" id="cliente_id"  class="form-control">  
         @foreach ($clientes as $cliente)
-        <option value="{{$cliente->id}}">{{$cliente->nome_cliente}}</option>
+        <option value="{{$cliente->id}}" {{ $orcamento->cliente_id == ($loop->index +1) ? "selected='selected'" : ""}}>{{$cliente->nome_cliente}}</option>
         @endforeach
       </select>  
     </div>
     <div class="form-group">
       <label for="fornecedor_id" class="form-label"> Fornecedor: </label>
-      <select  name="fornecedor_id" id="fornecedor_id"  class="form-control" value="{{ $orcamento->fornecedor_id }}">  
+      <select  name="fornecedor_id" id="fornecedor_id"  class="form-control">  
         @foreach ($fornecedores as $fornecedor)
-        <option value="{{$fornecedor->id}}">{{$fornecedor->nome_fornecedor}}</option>
+        <option value="{{$fornecedor->id}}" {{ $orcamento->fornecedor_id == ($loop->index +1) ? "selected='selected'" : ""}}>{{$fornecedor->nome_fornecedor}}</option>
         @endforeach
       </select>  
     </div>
     <div class="form-group">
       <label for="produto_id" class="form-label"> Produto: </label>
-      <select  name="produto_id" id="produto_id"  class="form-control" value="{{ $orcamento->produto_id }}">  
+      <select  name="produto_id" id="produto_id"  class="form-control">  
         @foreach ($produtos as $produto)
-        <option value="{{$produto->id}}">{{$produto->nome_produto}}</option>
+        <option value="{{$produto->id}}" {{ $orcamento->produto_id == ($loop->index +1) ? "selected='selected'" : ""}}>{{$produto->nome_produto}}</option>
         @endforeach
       </select>  
     </div>

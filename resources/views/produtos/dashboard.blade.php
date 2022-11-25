@@ -21,7 +21,7 @@
             @foreach($produtos as $produto)
                 <tr>
                     <td scropt="row">{{ $produto->id }}</td>
-                    <td>{{ $produto->name }}</td>
+                    <td>{{ $produto->nome_produto}}</td>
                     <td>{{ $produto->quantidade }}</td>
 
                     <td>
