@@ -13,13 +13,9 @@ DB_USERNAME=root
 DB_PASSWORD=
 
 
-## *IDE terminal Comando:  
+## *IDE Composer install i terminal Comand:  
 
 composer install
-
-php artisan migrate
-
-php artisan serve
 
 
 ## IDE Node install i terminal Comando:  
@@ -30,3 +26,10 @@ npm install
 npm run dev
 
 
+## *IDE terminal Comand:  
+
+php artisan migrate
+
+php artisan migrate:fresh --seed
+
+php artisan serve
